@@ -494,7 +494,7 @@ echo -e " 〄 \033[1;37m ⌯  \033[1;33mif you didn't, contact [Volt*V3r!f.y]\03
 echo -e " 〄 \033[1;37m ⌯ ⇢ \033[1;33mhttps://t.me/voltverifybot\033[0m"
 echo ""
 echo "───────────────────────────────────────────────────────────────────────•"
-user_key="1111122222"
+user_key="YaaDede007"
 if verify_key "$user_key" "$valid_keys"; then
 sleep 2
 echo "${T_GREEN} ⇢ Verification successful.${T_RESET}"
