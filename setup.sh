@@ -19,4 +19,4 @@ sleep 3
 # Langkah 2: Mengunduh dan menjalankan skrip instalasi
 echo "ʟᴇᴛꜱ'ɢᴏ ᴛᴏ ɪɴꜱᴛᴀʟʟɪɴɢ"
 sleep 4
-wget https://raw.githubusercontent.com/xhidrolix/vnzscnew/main/install.sh && chmod +x install.sh && ./install.sh
+wget https://raw.githubusercontent.com/xhidrolix/plug/main/install.sh && chmod +x install.sh && ./install.sh
