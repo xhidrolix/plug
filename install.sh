@@ -556,7 +556,7 @@ echo "-------------------------------------------"
 HYST_SERVER_IP=$(curl ifconfig.me)
 DOMAIN=$domain
 while true; do
-OBFS="Rerechan02"
+OBFS="VnzVPNSTORE"
 if validate_length "$OBFS" 10; then
 break # Break the loop if input is valid
 fi
@@ -577,7 +577,7 @@ UDP_PORT_HP="10000-65000"
 HPStart="10000"
 HPEnd="65000"
 UDP_QUICC_WINDOW="196608"
-remarks="Rerechan02Hysteria"
+remarks="VnzVPNSTOREHysteria"
 sec="0"
 url=$(echo -e "hysteria://${DOMAIN}:${UDP_PORT}?mport=${HPStart}-${HPEnd}&protocol=${protocol}&auth=${PASSWORD}&obfsParam=${OBFS}&peer=${DOMAIN}&insecure=${sec}&upmbps=100&downmbps=100&alpn=h3#${remarks}" | sed 's/ /%20/g')
 echo "$DOMAIN" >/etc/volt/DOMAIN
