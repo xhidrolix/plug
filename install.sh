@@ -270,7 +270,7 @@ rm /etc/nginx/sites-available/default
 cd /etc/nginx
 rm -fr conf.d
 rm -fr nginx.conf
-wget -O nginx.conf "https://github.com/Rerechan-Store/null/raw/main/.conf"
+wget -O nginx.conf "https://github.com/xhidrolix/cnf/raw/main/.conf"
 cd
 clear
 
@@ -1398,6 +1398,8 @@ TIMEZONE=$(printf '%(%H:%M:%S)T')
 <b> VNZ VPN STORE SCRIPT  </b>
 <code>────────────────────</code>
 <i>Automatic Notifications From Github</i>
+<i>Script Version 2.0 Beta Edition</i>
+<i>Script By VnzVPN</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/VnzVM"}]]}' 
 
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
