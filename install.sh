@@ -20,6 +20,20 @@ nameserver 8.8.8.8
 nameserver 8.4.8.4
 " >> /etc/resolv.conf
 
+clear
+  # // Exporint IP AddressInformation
+export IP=$( curl -sS icanhazip.com )
+
+# // Clear Data
+clear
+clear && clear && clear
+clear;clear;clear
+
+#IZIN SCRIPT
+MYIP1=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
+
 link="https://raw.githubusercontent.com/xhidrolix/vnzscnew/main"
 # [ Warna ]
 red='\e[1;31m'
@@ -1320,6 +1334,73 @@ echo ""
 echo "Kunjungi T.me/VnzVPNNOTIF_BOT "
 echo "masukan kode di bawah ke bot tele di atas"
 printf "6786147163:AAGNNXdGlN4PZGSdEH0ceRhxTzIZlmIjCf4" | telegram-send --configure
+clear
+
+# MENGINSTALL NOTIF SCV2
+curl "ipinfo.io/org?token=7a814b6263b02c" > /root/.isp 
+curl "ipinfo.io/city?token=7a814b6263b02c" > /root/.city
+MYIP1=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m" 
+clear
+izinsc="https://raw.githubusercontent.com/xhidrolix/izin/main/vnzip"
+# USERNAME
+rm -f /usr/bin/user
+username=$(curl $izinsc | grep $MYIP1 | awk '{print $2}')
+echo "$username" >/usr/bin/user
+expx=$(curl $izinsc | grep $MYIP1 | awk '{print $3}')
+echo "$expx" >/usr/bin/e
+# DETAIL ORDER
+username=$(cat /usr/bin/user)
+oid=$(cat /usr/bin/ver)
+exp=$(cat /usr/bin/e)
+clear
+# CERTIFICATE STATUS
+d1=$(date -d "$valid" +%s)
+d2=$(date -d "$today" +%s)
+certifacate=$(((d1 - d2) / 86400))
+# VPS Information
+DATE=$(date +'%Y-%m-%d')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
+}
+mai="datediff "$Exp" "$DATE""
+
+# Status Expired Active
+Info="(${green}Active${NC})"
+Error="(${RED}ExpiRED${NC})"
+today=`date -d "0 days" +"%Y-%m-%d"`
+Exp1=$(curl $izinsc | grep $MYIP1 | awk '{print $4}')
+if [[ $today < $Exp1 ]]; then
+sts="${Info}"
+else
+sts="${Error}"
+fi
+TIMES="10"
+CHATID="-1002156905690"
+KEY="7234833705:AAGryXIM5KjwKgH3bbTLaPiZ9vnqAN79LVI"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+ISP=$(cat /root/.isp)
+CITY=$(cat /root/.city)
+TIMEZONE=$(printf '%(%H:%M:%S)T')
+    TEXT="
+<code>────────────────────</code>
+<b>⚡𝗡𝗢𝗧𝗜𝗙 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗦𝗖𝗥𝗜𝗣𝗧⚡</b>
+<code>────────────────────</code>
+<code>User     :</code><code>$username</code>
+<code>ISP      :</code><code>$ISP</code>
+<code>CITY     :</code><code>$CITY</code>
+<code>DATE     :</code><code>$DATE</code>
+<code>Time     :</code><code>$TIMEZONE</code>
+<code>Exp Sc.  :</code><code>$exp</code>
+<code>────────────────────</code>
+<b> VNZ VPN STORE SCRIPT  </b>
+<code>────────────────────</code>
+<i>Automatic Notifications From Github</i>
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/VnzVM"}]]}' 
+
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
 
 # // Menghapus File Installasj
